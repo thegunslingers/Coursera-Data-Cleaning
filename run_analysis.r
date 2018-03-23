@@ -66,6 +66,6 @@ SubsetData <- select(FullDataset, matches("mean\\(\\)|std\\(\\)|activitylabel|su
 
 
 ### Create second indpendant data set with avg of each variable for each activity by subject
-SubsetData %>% group_by(subjectid, activitylabel) %>% summarise_at(vars(matches("mean\\(\\)|std\\(\\)")), list(mean)) %>% write.table("tidydata.csv", row.names = FALSE)
+SubsetData %>% group_by(subjectid, activitylabel) %>% summarise_at(vars(matches("mean\\(\\)|std\\(\\)")), list(mean)) %>% write.table("tidydata.txt", row.names = FALSE)
 
 
